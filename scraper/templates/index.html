@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>HanBBeang's wine_info</h1>
+
+    <div class="container">
+        <table class="table" style="width:100%" >
+            <thead>
+                <tr>
+                    <th scope="col">img_url</th>
+                    <th scope="col">name</th>
+                    <th scope="col">wine_info</th>
+                    <th scope="col">discount</th>
+                    <th scope="col">price</th>
+                    <th scope="col">cdate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for wine_info in wine %}
+                <tr>
+                    <td><img src = {{wine_info.img_url}} ></td>
+                    <td><a href="{{ wine_info.link }}">{{ wine_info.name }}</td>
+                    <td>{{wine_info.wine_info}}</td>
+                    <td>{{wine_info.category}}</td>
+                    <td>{{wine_info.discount}}</td>
+                    <td>{{wine_info.price}}</td>
+                    <td>{{wine_info.cdate}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
