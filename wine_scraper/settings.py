@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wine_data.wsgi.application'
+WSGI_APPLICATION = 'wine_scraper.wsgi.application'
 
 
 # Database
