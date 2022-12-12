@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import Wine
 
-# Create your views here.
+def index(request):
+    wine = Wine.object.all().order_by("-cdate")
+    return render(request, "index.html", {'wine':wine})
