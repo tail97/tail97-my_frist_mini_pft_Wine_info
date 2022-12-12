@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 # from django.forms import ModelForm
+
 class Wine(models.Model):
     name = models.CharField(max_length=200)
     img_url = models.CharField(max_length=200)

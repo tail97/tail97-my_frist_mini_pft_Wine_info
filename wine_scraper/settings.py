@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'wine_scraper',
+    'scraper',
     'django_extensions',
 ]
 
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'wine_data.urls'
+ROOT_URLCONF = 'wine_scraper.urls'
 
 import os
 TEMPLATES = [

@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from wine_scraper.models import Wine
+from scraper.models import Wine
 
 
 link = 'http://www.kajawine.kr/shop/item.php?it_id=1447331535'
@@ -9,12 +9,9 @@ def getSeg(link):
     item_url = link
     item_res = requests.get(item_url)
     item_soup = BeautifulSoup(item_res.text, "html.parser")
-
-
     tasting_note =  '정보없음' if (item_soup.select('#goods_extit_cont02 p')[0].text == '') else item_soup.select('#goods_extit_cont02 p')[0].text
     comment_food = '정보없음' if (item_soup.select('#goods_extit_cont03 p')[0].text == '') else item_soup.select('#goods_extit_cont03 p')[0].text
     return tasting_note, comment_food
-
 
 
 def run():
@@ -103,6 +100,7 @@ def run():
                 
                 db_cnt = Wine.objects.filter(link__iexact=link).count()
                 print(db_cnt)
+                
                 if(db_cnt==0):
                     # print("들어왔음")
                     try:
